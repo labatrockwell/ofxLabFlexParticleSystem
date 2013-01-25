@@ -43,7 +43,7 @@ Local:
   * If you are having trouble with the callbacks, see the example syntax.
 
 * Licensing
-  * TSPS is MIT + LGPL
+  * Open-source (BSD license)
 
 * Notes
   *
