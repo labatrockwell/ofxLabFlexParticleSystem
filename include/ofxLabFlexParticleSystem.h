@@ -97,7 +97,8 @@ public:
         VERTICAL_WRAP       = (1u << 0),
         HORIZONTAL_WRAP     = (1u << 1),
         VECTOR_FIELD        = (1u << 2),
-        VECTOR_FIELD_DRAW   = (1u << 3)
+        VECTOR_FIELD_DRAW   = (1u << 3),
+        DETECT_COLLISIONS   = (1u << 4)
     };
     
     /**

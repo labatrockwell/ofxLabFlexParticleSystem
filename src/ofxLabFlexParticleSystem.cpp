@@ -141,21 +141,24 @@ void ofxLabFlexParticleSystem::update()
         ofxLabFlexParticle* p = it->second;
         p->update();
         
-        // check collision
-        Iterator inner_it = it;
-        for(++inner_it; inner_it != _particles.end(); ++inner_it )
-        {
+        if ( _options & DETECT_COLLISIONS ){
             
-            ofxLabFlexParticle* inner_p = inner_it->second;
-            
-            //if( (*it)->distance(*(*inner_it)) <= (*it)->radius + (*inner_it)->radius ) {
-            //    //cout << "collision!" << endl;
-            //
-            //}
-             
-            p->repel( *inner_p );
-            inner_p->repel( *p );
+            // check collision
+            Iterator inner_it = it;
+            for(++inner_it; inner_it != _particles.end(); ++inner_it )
+            {
+                
+                ofxLabFlexParticle* inner_p = inner_it->second;
+                
+                //if( (*it)->distance(*(*inner_it)) <= (*it)->radius + (*inner_it)->radius ) {
+                //    //cout << "collision!" << endl;
+                //
+                //}
+                 
+                p->repel( *inner_p );
+                inner_p->repel( *p );
 
+            }
         }
         
         if( _options & VECTOR_FIELD ) {
